@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Family Track</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/familyTrack.css">
+</head>
+<body id="body">
+	<div ng-app="familyApp" ng-controller="formCtrl">
+
+		<ul class="screens">
+			<li class="viewMembers">
+				<div class="membersDiv">
+					<ul id="members" class="members container-fluid">
+						<ul class="memberItem member0 row">
+							<li class="col-xs-3 col-xs-offset-3">Add New</li>
+							<li class="col-xs-3"><span class="glyphicon glyphicon-plus-sign addButton"></span></li>
+						</ul>
+					</ul>
+				</div>
+			</li>
+		
+			<form>
+			<li class="add addMembers">
+				<div class="addingDiv">
+					<h2>Add a name to the family</h2>
+					<input class="memberNameInput" type="text" name='name' ng-maxlength="16" ng-model="user.name">
+				</div>
+			</li>
+			<li class="add addCity">
+				<div class="addingDiv">
+					<h2>And where are they?</h2>
+					<input class="memberCityInput" type="text" name='city' ng-maxlength="16" ng-model="user.city">
+				</div>
+			</li>
+			</form>
+		</ul>
+	</div>
+
+	
+
+
+	
+	<script src='js/jquery-1.11.2.min.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src='js/bootstrap.min.js'></script>
+	<script src="js/controllers/familyController.js"></script>
+	<script src='js/familyTrack.js'></script>
+</body>
+</html>

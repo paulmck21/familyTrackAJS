@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Family Track</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/familyTrack.css">
+
+</head>
+<body id="body">
+
+	<div ng-app="familyApp" ng-controller="FamilyController">
+		<form ng-submit="submitVals(user.name,user.city)">
+			<ul>
+			
+				<li>
+
+						<h2>Add a name to the family</h2>
+						<input class="memberNameInput" type="text" name='name' maxlength="16" ng-model="user.name" ng-init="Paul">
+
+				</li>
+				<li>
+					
+						<h2>And where are they?</h2>
+						<input class="memberCityInput" type="text" name='city' maxlength="16" ng-model="user.city" ng-init="London">
+						<button ng-click="submit">Submit</button>
+
+				</li>
+			</ul>
+		</form>
+				<div ng-repeat="obj in objs">
+					<ul class="memberList">
+						<ul class="members">
+							<li class="name"> {{ obj.name }} </li>
+							<li class="city"> {{ obj.city }} </li>
+							<li class="time"> {{ obj.time | date:'EEE HH:mm' }} </li>
+						</ul>
+					</ul>
+				</div>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src='js/familyTrack.js'></script>
+	<script src='js/controllers/familyController.js'></script>
+
+</body>
+</html>
