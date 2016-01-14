@@ -6,3 +6,47 @@ $breakmedium: 992px;
 $breaklarge: 1024px;
 $bodyheight: 65536px;
 
+* {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+body{
+	background-color: rgba(0,0,0,0.4);
+	width: 100vw;
+	height: 100vh;
+}
+
+.controller, .form, .form>ul{
+	width: 100%;
+	height:100%;
+}
+
+.addCity {
+	display: none;
+}
+
+
+.questions {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	font-family: Helvetica;
+	font-size: 3em;
+	text-align: center;
+	list-style-type: none;
+	color: $inputColor;
+	padding-top: 3em;
+	input {
+		border: 0;
+		border-bottom: 2px solid $inputColor;
+		background-color: transparent;
+		font-size: 3em;
+		color: $inputColor;
+		text-align: center;
+		outline: none;
+		width: 70%;
+	}
+}
+

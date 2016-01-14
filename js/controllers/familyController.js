@@ -7,29 +7,40 @@ familyApp.controller('FamilyController', function($scope) {
 
 	$scope.objs = [];
 
+	$scope.member = {};
+
 	var testDate = new Date();
 
-    $scope.submitVals = function(memberName, memberCity){
-    	$scope.objs.push({
-    		'name': memberName,
-    		'city': memberCity,
-    		'time': testDate
-    	});
+	$scope.submitName = function(memberName){
+		$scope.member.name = memberName
+
+	}
+
+	$scope.submitCity = function(cityName){
+		$scope.member.city = cityName;
+		$scope.member.memberTime = testDate;
+
+		$scope.objs.push($scope.member);
+
+		$scope.member = {};
+
+	}
+
+
+
+    // $scope.submitVals = function(memberName, memberCity){
+    // 	$scope.objs.push({
+    // 		'name': memberName,
+    // 		'city': memberCity,
+    // 		'time': testDate
+    // 	});
    
 
     $scope.reset();
 
 
-     console.log($scope.objs);
+     // console.log($scope.objs);
 
     
-	}
-});
-familyApp.directive('memberinfo', function() { 
-  return { 
-  	scope: {
-  		user: '='
-  	},
-    template: '<li> {{ x.name }} </li>'
-  }; 
+	
 });

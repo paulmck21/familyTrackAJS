@@ -5,29 +5,32 @@
 	<title>Family Track</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<link rel="stylesheet" type="text/css" href="css/familyTrack.css">
+
+
 
 </head>
 <body id="body">
 
-	<div ng-app="familyApp" ng-controller="FamilyController">
-		<form ng-submit="submitVals(user.name,user.city)">
+	<div class="controller" ng-app="familyApp" ng-controller="FamilyController">
+	
 			<ul>
-			
-				<li>
+				<form class="form" ng-submit="submitName(user.name)">
+				<li class="questions addMembers">
 
 						<h2>Add a name to the family</h2>
-						<input class="memberNameInput" type="text" name='name' maxlength="16" ng-model="user.name" ng-init="Paul">
-
+						<input class="memberNameInput" type="text" name='name' maxlength="16" ng-model="user.name">
 				</li>
-				<li>
+				</form>
+				<form class="form" ng-submit="submitCity(user.city)">
+				<li class="questions addCity">
 					
 						<h2>And where are they?</h2>
-						<input class="memberCityInput" type="text" name='city' maxlength="16" ng-model="user.city" ng-init="London">
-						<button ng-click="submit">Submit</button>
-
+						<input class="memberCityInput" type="text" name='city' maxlength="16" ng-model="user.city">
 				</li>
+				</form>
 			</ul>
 		</form>
 				<div ng-repeat="obj in objs">
@@ -35,12 +38,13 @@
 						<ul class="members">
 							<li class="name"> {{ obj.name }} </li>
 							<li class="city"> {{ obj.city }} </li>
-							<li class="time"> {{ obj.time | date:'EEE HH:mm' }} </li>
+							<li class="time"> {{ obj.memberTime | date:'EEE HH:mm' }} </li>
 						</ul>
 					</ul>
 				</div>
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	
+	<script src='js/jquery-1.11.2.min.js'></script>
 	<script src='js/familyTrack.js'></script>
 	<script src='js/controllers/familyController.js'></script>
 
